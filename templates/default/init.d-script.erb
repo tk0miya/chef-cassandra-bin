@@ -14,7 +14,7 @@ if [ ${NETWORKING} = "no" ]; then
     exit 0
 fi
 
-CASSANDRA_HOME=/usr/local/apache-cassandra-<%= node.cassandra.version %>
+CASSANDRA_HOME=/usr/local/apache-cassandra-<%= @cassandra_version %>
 cassandrad=${CASSANDRA_HOME}/bin/cassandra
 pidfile=/var/run/cassandra.pid
 lockfile=/var/lock/subsys/cassandrad

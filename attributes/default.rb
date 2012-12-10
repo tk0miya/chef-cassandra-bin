@@ -1,1 +1,1 @@
-default['cassandra']['version'] = '1.1.4'
+default['cassandra-bin']['version'] = '1.1.7'

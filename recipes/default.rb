@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-version = node['cassandra']['version']
+version = node['cassandra-bin']['version']
 
 execute "cassandra restart" do
   command "/etc/init.d/cassandra restart"
@@ -33,6 +33,9 @@ template "/etc/init.d/cassandra" do
   owner "root"
   group "root"
   mode "0755"
+  variables(
+    :cassandra_version => version
+  )
   notifies :enable, resources(:service => "cassandra"), :immediately
   notifies :run, resources(:execute => "cassandra restart")
 end
