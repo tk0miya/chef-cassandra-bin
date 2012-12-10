@@ -7,6 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe "java"
+
 version = node['cassandra-bin']['version']
 
 execute "cassandra restart" do
