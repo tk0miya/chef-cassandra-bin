@@ -57,7 +57,7 @@ script "install cassandra" do
 end
 
 remote_file "#{Chef::Config[:file_cache_path]}/apache-cassandra-#{version}-bin.tar.gz" do
-  source "http://ftp.kddilabs.jp/infosystems/apache/cassandra/#{version}/apache-cassandra-#{version}-bin.tar.gz"
+  source "#{node['cassandra-bin']['url']}/#{version}/apache-cassandra-#{version}-bin.tar.gz"
   not_if {::File.exists?("/usr/local/apache-cassandra-#{version}")}
   notifies :run, resources(:script => "install cassandra"), :immediately
 end

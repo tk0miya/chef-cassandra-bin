@@ -11,6 +11,7 @@ Requirements
 Attributes
 ==========
 
+* `node['cassandra-bin']['url']` - distributed URL of cassandra (default: http://archive.apache.org/dist/cassandra)
 * `node['cassandra-bin']['version']` - Version of cassandra
 
 Usage
