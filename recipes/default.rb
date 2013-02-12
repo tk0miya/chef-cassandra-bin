@@ -46,7 +46,7 @@ script "install cassandra" do
     tar xzf #{Chef::Config[:file_cache_path]}/apache-cassandra-#{version}-bin.tar.gz
   EOH
   action :nothing
-  notifies :create, "template[/usr/local/apache-cassandra-#{version}/conf/cassandra.yaml]"), :immediately
+  notifies :create, "template[/usr/local/apache-cassandra-#{version}/conf/cassandra.yaml]", :immediately
   notifies :create, "template[/etc/init.d/cassandra]", :immediately
   notifies :restart, "service[cassandra]", :immediately
 end
