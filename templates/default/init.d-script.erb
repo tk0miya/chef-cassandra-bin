@@ -29,7 +29,7 @@ start() {
     fi
     [ ${RETVAL} = 1 ] && return
     echo -n "Starting ${service}: "
-    ${cassandrad} -p ${pidfile}
+    nohup ${cassandrad} -p ${pidfile}
     RETVAL=$?
     if [ ${RETVAL} = 0 ]; then
         echo_success
